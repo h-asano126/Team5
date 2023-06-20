@@ -2,39 +2,65 @@
 <html>
 <head>
   <title>班員紹介ページ</title>
-  <style>
-    /* スタイルをここに追加 */
-  </style>
+  <link rel="stylesheet" href="ホーム.css">
+  <script src="script.js"></script>
 </head>
 <body>
   <h1>班員紹介ページ</h1>
   <h2>班員一覧</h2>
 
   <div class="member">
-    <h2>浅野</h2>
-    
+    <h2><a href="浅野紹介.html">浅野</a></h2>
   </div>
 
   <div class="member">
-    <h2>諏訪</h2>
-    
+    <h2><a href="諏訪紹介.html">諏訪</a></h2>
   </div>
 
-   <div class="member">
-    <h2>荒木</h2>
-    
+  <div class="member">
+    <h2><a href="荒木紹介.html">荒木</a></h2>
   </div>
-  
-   <div class="member">
-    <h2>平岡</h2>
-    
+
+  <div class="member">
+    <h2><a href="平岡紹介.html">平岡</a></h2>
   </div>
-  
-   <div class="member">
-    <h2>内川</h2>
-    
+
+  <div class="member">
+    <h2><a href="内川紹介.html">内川</a></h2>
   </div>
+
   <!-- 追加のメンバー情報をここに追加 -->
 
+  <div id="clock"></div>
+
+  <script>
+    // JavaScript code for the clock
+    function updateClock() {
+      var now = new Date();
+      var hours = now.getHours();
+      var minutes = now.getMinutes();
+      var seconds = now.getSeconds();
+
+      // Format the time as two digits if less than 10
+      hours = padZero(hours);
+      minutes = padZero(minutes);
+      seconds = padZero(seconds);
+
+      // Update the clock display
+      var clock = document.getElementById("clock");
+      clock.textContent = hours + ":" + minutes + ":" + seconds;
+
+      // Call this function again after 1 second
+      setTimeout(updateClock, 1000);
+    }
+
+    // Function to add leading zero if value is less than 10
+    function padZero(value) {
+      return value < 10 ? "0" + value : value;
+    }
+
+    // Start the clock when the page loads
+    window.onload = updateClock;
+  </script>
 </body>
 </html>
