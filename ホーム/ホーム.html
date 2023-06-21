@@ -63,4 +63,23 @@
     window.onload = updateClock;
   </script>
 </body>
+<head>
+  <title>アラートメッセージを表示するボタン</title>
+  <script>
+    function showAlerts() {
+      var input = document.getElementById("inputText");
+      var inputValue = input.value;
+      
+      // 入力された数だけアラートメッセージを表示
+      for (var i = 0; i < inputValue; i++) {
+        alert("アラートメッセージ " + (i+1));
+      }
+    }
+  </script>
+</head>
+<body>
+  <label for="inputText">数を入力してください：</label>
+  <input type="number" id="inputText">
+  <button onclick="showAlerts()">アラートを表示</button>
+</body>
 </html>
