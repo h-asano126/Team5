@@ -49,13 +49,24 @@ body {
     letter-spacing: 2px;
   }
   
-  .syoukai_1, .sonohoka_1 {
+  .syoukai_1 {
     margin-bottom: 30px;
     margin-right: 300px;
     padding-left:  auto;
     padding-top: 20px;
     padding-left: 20px;
     padding-bottom: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 17px 20px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .sonohoka_1 {
+    margin-bottom: 30px;
+    margin-right: 1000px;
+    padding-left:  auto;
+    padding-top: 10px;
+    padding-left: 20px;
     background-color: #fff;
     border-radius: 4px;
     box-shadow: 17px 20px 6px rgba(0, 0, 0, 0.1);
@@ -84,7 +95,17 @@ body {
     border-radius: 4px;
     box-shadow: 17px 20px 6px rgba(0, 0, 0, 0.1);
   }
+
+  .kome_syousai_1{
+    font-size: 40px;
+    color: #000002;
+  }
   
+  .sonohoka_syousai_1{
+    font-size: 25px;
+    color: #851f1f;
+  }
+
   p {
     line-height: 1.6;
     margin-bottom: 10px;
@@ -119,4 +140,6 @@ body {
     margin-left: 40px;
   }
   
-
+  .link{
+    color: #000;
+  }
