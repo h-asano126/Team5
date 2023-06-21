@@ -32,6 +32,19 @@
   <!-- 追加のメンバー情報をここに追加 -->
 
   <div id="clock"></div>
+<!-- 浅野のカウントボタンここから -->
+<div class = "cyousei_1">
+  <div class="tate_1">
+    <div class="buttons">
+      <button class = "but_1" onclick="incrementCount()">カウント</button>
+      <button class = "but_2" onclick="resetCount()">リセット</button>
+    </div>
+    <div id="countDisplay" style="text-align: center; margin-top: 10px; margin-left: -10px; font-size: 30px;">
+      <span id="countNumber">0</span>
+    </div>    
+  </div>
+</div>
+<!-- 浅野のカウントボタンここまで -->
 
   <script>
     // JavaScript code for the clock
@@ -75,6 +88,21 @@
         alert("アラートメッセージ " + (i+1));
       }
     }
+
+  //浅野のカウントボタンここから
+    var count = 0;
+
+  function incrementCount() {
+    count++;
+    document.getElementById("countDisplay").textContent = count;
+  }
+
+  function resetCount() {
+    count = 0;
+    document.getElementById("countDisplay").textContent = count;
+  }
+  //浅野のカウントダウンボタンここまで
+
   </script>
 </head>
 <body>

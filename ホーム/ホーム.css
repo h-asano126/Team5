@@ -5,3 +5,28 @@
   right: 20px;
   font-size: 24px;
 }
+
+.buttons{
+  height: 50px;
+  width: auto;
+}
+
+#countNumber {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.cyousei_1{
+  display: flex;
+  align-items: center;
+}
+
+.but_1{
+  width: 100px;
+  height: 50px;
+}
+
+.but_2{
+  width: 100px;
+  height: 50px;
+}
