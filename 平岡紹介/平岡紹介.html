@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>平岡紹介</title>
+<link rel="stylesheet" href="平岡紹介.css">
+<style>
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .profile {
+    flex: 1;
+  }
+  .image-container {
+    text-align: center;
+  }
+  .image-container img {
+    display: none;
+    max-width: 100%;
+    height: auto;
+  }
+  .image-container.show-image img {
+    display: block;
+  }
+  .comment {
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-family: Arial, sans-serif;
+    font-weight: bold; /* Added font-weight to make the comments bold */
+  }
+</style>
+<script>
+  function toggleImage() {
+    var imageContainer = document.querySelector('.image-container');
+    imageContainer.classList.toggle('show-image');
+  }
+</script>
+</head>
+<body>
+<div class="wrapper">
+  <header class="header">
+    <h1>平岡の紹介ページ(担当者:荒木)</h1>
+  </header>
+  <main>
+    <section class="container">
+      <div class="profile">
+        <p>年齢: 19歳</p>
+        <p>得意教科: 科学</p>
+        <p>好きな食べ物: アイス</p>
+        <p>趣味: モデリング</p>
+        <p>就職活動の方針: なるように成れ</p>
+      </div>
+      <div class="image-container">
+        <button onclick="toggleImage()">画像を表示</button>
+        <img src="profile-pic.png" alt="プロフィール写真">
+      </div>
+    </section>
+    <div class="comment-container">
+      <p class="comment">班員のコメント</p>
+      <p class="comment">荒木：画像これでええんかｗ</p>
+      <p class="comment">浅野：</p>
+      <p class="comment">内川：</p>
+      <p class="comment">諏訪：</p>
+    </div>
+
+    <p class="message-item">ほかの人のページ</p>
+    <nav>
+      <ul>
+        <li><a href="../ホーム/荒木紹介.html">荒木</a></li>
+        <li><a href="../ホーム/内川紹介.html">内川</a></li>
+        <li><a href="../ホーム/浅野紹介.html">浅野</a></li>
+        <li><a href="../ホーム/諏訪紹介.html">諏訪</a></li>
+        <br>
+        <li><a href="../ホーム/ホーム.html">ホーム</a></li>
+      </ul>
+    </nav>
+  </main>
+</div>
+</body>
