@@ -110,4 +110,27 @@
   <input type="number" id="inputText">
   <button onclick="showAlerts()">アラートを表示</button>
 </body>
+
+<p>おみくじコーナー</p>
+<input type="button" value="おみくじを引く" onclick="drawFortune();"></input>
+<div id="omikuzi"></div>
+<script>
+	function drawFortune() {
+	var array = [
+		'<img src="omikuji_daikichi.png" alt="大吉だ！！確率は多分9%だ！！" width="10%">',
+		'<img src="omikuji_chuukichi.png" alt="中吉だ！何もないぞッッ！！" width="10%">',
+		'<img src="omikuji_chuukichi.png" alt="中吉だ！何もないぞッッ！！" width="10%">',
+		'<img src="omikuji_syoukichi.png" alt="小吉だ。普通です。" width="10%">',
+		'<img src="omikuji_syoukichi.png" alt="小吉だ。普通です。" width="10%">',
+		'<img src="omikuji_syoukichi.png" alt="小吉だ。普通です。" width="10%">',
+		'<img src="omikuji_suekichi.png" alt="末吉だ。チーズ牛丼並盛で。" width="10%">',
+		'<img src="omikuji_suekichi.png" alt="末吉だ。チーズ牛丼並盛で。" width="10%">',
+		'<img src="omikuji_suekichi.png" alt="末吉だ。チーズ牛丼並盛で。" width="10%">',
+		'<img src="omikuji_kyou.png" alt="凶だ。Have a nice day." width="10%">',
+		'<img src="omikuji_daikyou.png" alt="大凶！これはひどい！あなたを詐欺罪と侮辱罪で訴えます！理由はもちろんお分かりですね？あなたが..." width="10%">'];
+	var value = array[Math.floor(Math.random() * array.length)];
+	var id1 = document.getElementById('omikuzi');
+	id1.innerHTML = value;
+	}
+</script>
 </html>
