@@ -4,22 +4,101 @@
   <meta charset="UTF-8">
   <title>荒木紹介ページ</title>
   <link rel="stylesheet" href="荒木紹介.css">
+
+  <style>
+     body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .video-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    #video-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+  </style>
+
 </head>
 <body>
-    
-    <style>
-        a {
-          color: red;
-        }
-    </style>
+
+    <div class="video-container">
+        <video id="video-background" autoplay loop muted>
+          <source src="https://www.youtube.com/embed/or5A_ZzB6YI?autoplay=1&loop=1&controls=0&showinfo=0&rel=0&iv_load_policy=3" type="video/mp4">
+        </video>
+      </div>
 
     <p>荒木の紹介ページ（作成者：浅野）</p>
 
-    <div class="bun_1">
-        <img class = "img_1" src="images/ara_ki.jpg" alt="" src="">
-        
+    <script>
+
+function toggleImageVisibility() {
+  var image = document.getElementById("image");
+  var buttonText = document.getElementById("buttonText");
+
+  if (image.style.visibility === "hidden") {
+    image.style.visibility = "visible";
+    buttonText.textContent = "非表示";
+  } else {
+    image.style.visibility = "hidden";
+    buttonText.textContent = "表示";
+  }
+}
+    </script>
+ 
+ <script src="https://www.youtube.com/player_api"></script>
+ <script>
+   // YouTubeの埋め込みプレーヤーAPIを読み込んだ後に実行される関数
+   function onYouTubePlayerAPIReady() {
+     // 埋め込むYouTubeの動画IDを指定
+     var videoId = 'or5A_ZzB6YI';
+
+     // プレーヤーの設定
+     var player = new YT.Player('player', {
+       width: '100%',
+       height: '100%',
+       videoId: videoId,
+       playerVars: {
+         autoplay: 1,
+         controls: 0,
+         loop: 1,
+         playlist: videoId,
+         modestbranding: 1,
+         showinfo: 0,
+         rel: 0,
+         iv_load_policy: 3
+       },
+       events: {
+         onReady: function(event) {
+           event.target.mute(); // ミュートに設定
+         }
+       }
+     });
+   }
+ </script>
+
+      <div class="bun_1">
+        <div class="img_1">
+          <img id="image" style="width: 200px; height: 200px; margin-top: 40px;" src="images/ara_ki.jpg" alt="">
+          <button class="toggleButton" onclick="toggleImageVisibility()">画像の表示/非表示　切替</button>
+        </div>
         <p class="size_1">荒木【ARAKI】君</p>
-    </div>
+      </div>
+      
+      
 
     <div class="syoukai_1">
         <p>
