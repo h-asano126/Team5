@@ -59,32 +59,33 @@
 
   <script>
     // JavaScript code for the clock
-    function updateClock() {
-      var now = new Date();
-      var hours = now.getHours();
-      var minutes = now.getMinutes();
-      var seconds = now.getSeconds();
+function updateClock() {
+  var now = new Date();
+  var hours = now.getHours();
+  var minutes = now.getMinutes();
+  var seconds = now.getSeconds();
 
-      // Format the time as two digits if less than 10
-      hours = padZero(hours);
-      minutes = padZero(minutes);
-      seconds = padZero(seconds);
+  // Format the time as two digits if less than 10
+  hours = padZero(hours);
+  minutes = padZero(minutes);
+  seconds = padZero(seconds);
 
-      // Update the clock display
-      var clock = document.getElementById("clock");
-      clock.textContent = hours + ":" + minutes + ":" + seconds;
+  // Update the clock display
+  var clock = document.getElementById("clock");
+  clock.textContent = hours + ":" + minutes + ":" + seconds;
 
-      // Call this function again after 1 second
-      setTimeout(updateClock, 1000);
-    }
+  // Call this function again after 1 second
+  setTimeout(updateClock, 1000);
+}
 
-    // Function to add leading zero if value is less than 10
-    function padZero(value) {
-      return value < 10 ? "0" + value : value;
-    }
->
-    // Start the clock when the page loads
-    window.onload = updateClock;
+// Function to add leading zero if value is less than 10
+function padZero(value) {
+  return value < 10 ? "0" + value : value;
+}
+
+// Start the clock when the page loads
+window.onload = updateClock;
+
   </script>
 </body>
 <head>
@@ -133,13 +134,26 @@
   //浅野のカウントダウンボタンここまで
   </script>
 
-  <button onclick="switchBackground()">背景色を切り替える</button>
+  <div class="switch-container">
+  <button onclick="switchBackground()">背景色切り替え</button>
+</div>
+
+
 
 </head>
 <body>
+  <div class="label-container">
   <label for="inputText">数を入力してください：</label>
+</div>
+
+  <div class="input-container">
   <input type="number" id="inputText">
+</div>
+
+  <div class="button-container">
   <button onclick="showAlerts()">アラートを表示</button>
+</div>
+
 </body>
 
 <p>おみくじコーナー</p>
