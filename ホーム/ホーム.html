@@ -4,6 +4,17 @@
   <title>班員紹介ページ</title>
   <link rel="stylesheet" href="ホーム.css">
   <script src="script.js"></script>
+  <style>
+    .red-bg {
+      background-color: red;
+    }
+    .blue-bg {
+      background-color: blue;
+    }
+    .yellow-bg {
+      background-color: yellow;
+    }
+  </style>
 </head>
 <body>
   <h1>班員紹介ページ</h1>
@@ -71,7 +82,7 @@
     function padZero(value) {
       return value < 10 ? "0" + value : value;
     }
-
+>
     // Start the clock when the page loads
     window.onload = updateClock;
   </script>
@@ -88,6 +99,27 @@
         alert("アラートメッセージ " + (i+1));
       }
     }
+
+   // Function to switch background color
+    function switchBackground() {
+      var body = document.getElementsByTagName("body")[0];
+      var classNames = body.className.split(" ");
+      if (classNames.includes("red-bg")) {
+        body.className = classNames.filter(className => className !== "red-bg").join(" ");
+        body.classList.add("blue-bg");
+      } else if (classNames.includes("blue-bg")) {
+        body.className = classNames.filter(className => className !== "blue-bg").join(" ");
+        body.classList.add("yellow-bg");
+      } else if (classNames.includes("yellow-bg")) {
+        body.className = classNames.filter(className => className !== "yellow-bg").join(" ");
+        body.classList.add("red-bg");
+      } else {
+        body.classList.add("red-bg");
+      }
+    }
+  </script>
+
+  <button onclick="switchBackground()">背景色を切り替える</button
 
   //浅野のカウントボタンここから
     var count = 0;
@@ -109,9 +141,6 @@
   <label for="inputText">数を入力してください：</label>
   <input type="number" id="inputText">
   <button onclick="showAlerts()">アラートを表示</button>
-</body>
-
-<button onclick="switchBackground()">背景色を切り替える</button>
 </body>
 
 <p>おみくじコーナー</p>
