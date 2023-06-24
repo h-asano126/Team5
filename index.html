@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>班員紹介ページ</title>
+  <link rel="stylesheet" href="ホーム.css">
+  <script src="script.js"></script>
+  <style>
+    .red-bg {
+      background-color: red;
+    }
+    .blue-bg {
+      background-color: blue;
+    }
+    .yellow-bg {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <h1>班員紹介ページ</h1>
+  <h2>班員一覧</h2>
+
+  <div class="member">
+    <h2><a href="../浅野紹介/浅野紹介.html">浅野</a></h2>
+  </div>
+
+  <div class="member">
+    <h2><a href="../諏訪紹介/諏訪紹介.html">諏訪</a></h2>
+  </div>
+
+  <div class="member">
+    <h2><a href="../荒木紹介/荒木紹介.html">荒木</a></h2>
+  </div>
+
+  <div class="member">
+    <h2><a href="../平岡紹介/平岡紹介.html">平岡</a></h2>
+  </div>
+
+  <div class="member">
+    <h2><a href="../内川紹介/内川紹介.html">内川</a></h2>
+  </div>
+
+  <!-- 追加のメンバー情報をここに追加 -->
+
+  <div id="clock"></div>
+<!-- 浅野のカウントボタンここから -->
+<div class = "cyousei_1">
+  <div class="tate_1">
+    <div class="buttons">
+      <button class = "but_1" onclick="incrementCount()">カウント</button>
+      <button class = "but_2" onclick="resetCount()">リセット</button>
+    </div>
+    <div id="countDisplay" style="text-align: center; margin-top: 10px; margin-left: -10px; font-size: 30px;">
+      <span id="countNumber">0</span>
+    </div>    
+  </div>
+</div>
+<!-- 浅野のカウントボタンここまで -->
+
+  <script>
+    // JavaScript code for the clock
+function updateClock() {
+  var now = new Date();
+  var hours = now.getHours();
+  var minutes = now.getMinutes();
+  var seconds = now.getSeconds();
+
+  // Format the time as two digits if less than 10
+  hours = padZero(hours);
+  minutes = padZero(minutes);
+  seconds = padZero(seconds);
+
+  // Update the clock display
+  var clock = document.getElementById("clock");
+  clock.textContent = hours + ":" + minutes + ":" + seconds;
+
+  // Call this function again after 1 second
+  setTimeout(updateClock, 1000);
+}
+
+// Function to add leading zero if value is less than 10
+function padZero(value) {
+  return value < 10 ? "0" + value : value;
+}
+
+// Start the clock when the page loads
+window.onload = updateClock;
+
+  </script>
+</body>
+<head>
+  <title>アラートメッセージを表示するボタン</title>
+  <script>
+    function showAlerts() {
+      var input = document.getElementById("inputText");
+      var inputValue = input.value;
+      
+      // 入力された数だけアラートメッセージを表示
+      for (var i = 0; i < inputValue; i++) {
+        alert("アラートメッセージ " + (i+1));
+      }
+    }
+
+   // Function to switch background color
+    function switchBackground() {
+      var body = document.getElementsByTagName("body")[0];
+      var classNames = body.className.split(" ");
+      if (classNames.includes("red-bg")) {
+        body.className = classNames.filter(className => className !== "red-bg").join(" ");
+        body.classList.add("blue-bg");
+      } else if (classNames.includes("blue-bg")) {
+        body.className = classNames.filter(className => className !== "blue-bg").join(" ");
+        body.classList.add("yellow-bg");
+      } else if (classNames.includes("yellow-bg")) {
+        body.className = classNames.filter(className => className !== "yellow-bg").join(" ");
+        body.classList.add("red-bg");
+      } else {
+        body.classList.add("red-bg");
+      }
+    }
+
+    //浅野のカウントボタンここから
+    var count = 0;
+
+  function incrementCount() {
+    count++;
+    document.getElementById("countDisplay").textContent = count;
+  }
+
+  function resetCount() {
+    count = 0;
+    document.getElementById("countDisplay").textContent = count;
+  }
+  //浅野のカウントダウンボタンここまで
+  </script>
+
+  <div class="switch-container">
+  <button onclick="switchBackground()">背景色切り替え</button>
+</div>
+
+
+
+</head>
+<body>
+  <div class="label-container">
+  <label for="inputText">数を入力してください：</label>
+</div>
+
+  <div class="input-container">
+  <input type="number" id="inputText">
+</div>
+
+  <div class="button-container">
+  <button onclick="showAlerts()">アラートを表示</button>
+</div>
+
+</body>
+
+<p>おみくじコーナー</p>
+<input type="button" value="おみくじを引く" onclick="drawFortune();"></input>
+<div id="omikuzi"></div>
+<script>
+	function drawFortune() {
+	var array = [
+		'<img src="omikuji_daikichi.png" alt="大吉だ！！確率は多分9%だ！！" width="10%">',
+		'<img src="omikuji_chuukichi.png" alt="中吉だ！何もないぞッッ！！" width="10%">',
+		'<img src="omikuji_chuukichi.png" alt="中吉だ！何もないぞッッ！！" width="10%">',
+		'<img src="omikuji_syoukichi.png" alt="小吉だ。普通です。" width="10%">',
+		'<img src="omikuji_syoukichi.png" alt="小吉だ。普通です。" width="10%">',
+		'<img src="omikuji_syoukichi.png" alt="小吉だ。普通です。" width="10%">',
+		'<img src="omikuji_suekichi.png" alt="末吉だ。チーズ牛丼並盛で。" width="10%">',
+		'<img src="omikuji_suekichi.png" alt="末吉だ。チーズ牛丼並盛で。" width="10%">',
+		'<img src="omikuji_suekichi.png" alt="末吉だ。チーズ牛丼並盛で。" width="10%">',
+		'<img src="omikuji_kyou.png" alt="凶だ。Have a nice day." width="10%">',
+		'<img src="omikuji_daikyou.png" alt="大凶！これはひどい！あなたを詐欺罪と侮辱罪で訴えます！理由はもちろんお分かりですね？あなたが..." width="10%">'];
+	var value = array[Math.floor(Math.random() * array.length)];
+	var id1 = document.getElementById('omikuzi');
+	id1.innerHTML = value;
+	}
+</script>
+</html>
